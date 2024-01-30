@@ -1,0 +1,19 @@
+<div class="banner">
+  <%= image_tag('https://batekarchitekten.com/media/mw1500/batekarchitekten_yorckpassagen_marcuswend_15.jpg', alt: 'Cinema Interior') %>
+  <div class="caption">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
+
+<h1>All Lists</h1>
+
+<ul>
+  <% @lists.each do |list| %>
+    <li>
+      <%= link_to list.name, list_path(list) %>
+      <%= link_to 'Delete', list, data: {turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to 'New List', new_list_path, class: 'btn btn-primary' %>

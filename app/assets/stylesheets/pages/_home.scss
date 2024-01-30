@@ -1,1 +1,4 @@
 // Specific CSS for your home-page
+.custom-form label.required::after {
+  content: " (minimum 6 characters)";
+}
